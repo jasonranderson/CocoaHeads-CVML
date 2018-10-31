@@ -1,0 +1,6 @@
+framework module KSOFontAwesomeExtensions {
+  umbrella header "KSOFontAwesomeExtensions-umbrella.h"
+
+  export *
+  module * { export * }
+}

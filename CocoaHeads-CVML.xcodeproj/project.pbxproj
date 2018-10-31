@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		234F9A9BF7BE0605DEADFE93 /* Pods_CocoaHeads_CVML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02D023C46BA2724684F68467 /* Pods_CocoaHeads_CVML.framework */; };
 		74038D7621581AC9008E0DC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74038D7521581AC9008E0DC9 /* AppDelegate.swift */; };
 		74038D7821581AC9008E0DC9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74038D7721581AC9008E0DC9 /* ViewController.swift */; };
 		74038D7B21581AC9008E0DC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74038D7921581AC9008E0DC9 /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02D023C46BA2724684F68467 /* Pods_CocoaHeads_CVML.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CocoaHeads_CVML.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		089477FF484A3631AC7F0CAA /* Pods-CocoaHeads-CVML.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaHeads-CVML.release.xcconfig"; path = "Pods/Target Support Files/Pods-CocoaHeads-CVML/Pods-CocoaHeads-CVML.release.xcconfig"; sourceTree = "<group>"; };
+		63254C95E5E9133C67344246 /* Pods-CocoaHeads-CVML.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaHeads-CVML.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CocoaHeads-CVML/Pods-CocoaHeads-CVML.debug.xcconfig"; sourceTree = "<group>"; };
 		74038D7221581AC9008E0DC9 /* CocoaHeads-CVML.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CocoaHeads-CVML.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74038D7521581AC9008E0DC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74038D7721581AC9008E0DC9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				234F9A9BF7BE0605DEADFE93 /* Pods_CocoaHeads_CVML.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		727A3008F3FBB7E6FC09BA29 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				02D023C46BA2724684F68467 /* Pods_CocoaHeads_CVML.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		74038D6921581AC9008E0DC9 = {
 			isa = PBXGroup;
 			children = (
 				74038D7421581AC9008E0DC9 /* CocoaHeads-CVML */,
 				74038D7321581AC9008E0DC9 /* Products */,
+				C022A15D8EB200A98252917E /* Pods */,
+				727A3008F3FBB7E6FC09BA29 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +79,15 @@
 			path = "CocoaHeads-CVML";
 			sourceTree = "<group>";
 		};
+		C022A15D8EB200A98252917E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				63254C95E5E9133C67344246 /* Pods-CocoaHeads-CVML.debug.xcconfig */,
+				089477FF484A3631AC7F0CAA /* Pods-CocoaHeads-CVML.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 74038D8421581ACB008E0DC9 /* Build configuration list for PBXNativeTarget "CocoaHeads-CVML" */;
 			buildPhases = (
+				1BC1EAAE4B82DE6BC68335D7 /* [CP] Check Pods Manifest.lock */,
 				74038D6E21581AC9008E0DC9 /* Sources */,
 				74038D6F21581AC9008E0DC9 /* Frameworks */,
 				74038D7021581AC9008E0DC9 /* Resources */,
+				074937B093B98731E9E6D314 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		074937B093B98731E9E6D314 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CocoaHeads-CVML/Pods-CocoaHeads-CVML-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Ditko/Ditko.framework",
+				"${BUILT_PRODUCTS_DIR}/KSOFontAwesomeExtensions/KSOFontAwesomeExtensions.framework",
+				"${BUILT_PRODUCTS_DIR}/Loki/Loki.framework",
+				"${BUILT_PRODUCTS_DIR}/Shield/Shield.framework",
+				"${BUILT_PRODUCTS_DIR}/Stanley/Stanley.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Ditko.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KSOFontAwesomeExtensions.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Loki.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Shield.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stanley.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CocoaHeads-CVML/Pods-CocoaHeads-CVML-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1BC1EAAE4B82DE6BC68335D7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CocoaHeads-CVML-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		74038D6E21581AC9008E0DC9 /* Sources */ = {
@@ -280,15 +353,13 @@
 		};
 		74038D8521581ACB008E0DC9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63254C95E5E9133C67344246 /* Pods-CocoaHeads-CVML.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 74KPPW2K35;
 				INFOPLIST_FILE = "CocoaHeads-CVML/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kosoku.CocoaHeads-CVML";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -298,15 +369,13 @@
 		};
 		74038D8621581ACB008E0DC9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 089477FF484A3631AC7F0CAA /* Pods-CocoaHeads-CVML.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 74KPPW2K35;
 				INFOPLIST_FILE = "CocoaHeads-CVML/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kosoku.CocoaHeads-CVML";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

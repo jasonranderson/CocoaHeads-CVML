@@ -1,0 +1,6 @@
+framework module Stanley {
+  umbrella header "Stanley-umbrella.h"
+
+  export *
+  module * { export * }
+}
