@@ -13,6 +13,7 @@
 		74038D7B21581AC9008E0DC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74038D7921581AC9008E0DC9 /* Main.storyboard */; };
 		74038D7D21581ACB008E0DC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74038D7C21581ACB008E0DC9 /* Assets.xcassets */; };
 		74038D8021581ACB008E0DC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74038D7E21581ACB008E0DC9 /* LaunchScreen.storyboard */; };
+		74732930218A329A0032C964 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7473292F218A329A0032C964 /* PreviewView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		74038D7C21581ACB008E0DC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74038D7F21581ACB008E0DC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74038D8121581ACB008E0DC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7473292F218A329A0032C964 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,13 +72,46 @@
 			isa = PBXGroup;
 			children = (
 				74038D7521581AC9008E0DC9 /* AppDelegate.swift */,
+				7473292D218A32630032C964 /* Views */,
+				7473292C218A325B0032C964 /* Controllers */,
+				7473292B218A324F0032C964 /* Extensions */,
+				74732931218A32BB0032C964 /* Supporting Files */,
+			);
+			path = "CocoaHeads-CVML";
+			sourceTree = "<group>";
+		};
+		7473292B218A324F0032C964 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		7473292C218A325B0032C964 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				74038D7721581AC9008E0DC9 /* ViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		7473292D218A32630032C964 /* Views */ = {
+			isa = PBXGroup;
+			children = (
 				74038D7921581AC9008E0DC9 /* Main.storyboard */,
+				7473292F218A329A0032C964 /* PreviewView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		74732931218A32BB0032C964 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				74038D7C21581ACB008E0DC9 /* Assets.xcassets */,
 				74038D7E21581ACB008E0DC9 /* LaunchScreen.storyboard */,
 				74038D8121581ACB008E0DC9 /* Info.plist */,
 			);
-			path = "CocoaHeads-CVML";
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		C022A15D8EB200A98252917E /* Pods */ = {
@@ -210,6 +245,7 @@
 			files = (
 				74038D7821581AC9008E0DC9 /* ViewController.swift in Sources */,
 				74038D7621581AC9008E0DC9 /* AppDelegate.swift in Sources */,
+				74732930218A329A0032C964 /* PreviewView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,7 +395,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 74KPPW2K35;
 				INFOPLIST_FILE = "CocoaHeads-CVML/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kosoku.CocoaHeads-CVML";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -375,7 +414,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 74KPPW2K35;
 				INFOPLIST_FILE = "CocoaHeads-CVML/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kosoku.CocoaHeads-CVML";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
