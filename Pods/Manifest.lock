@@ -1,105 +1,29 @@
 PODS:
-  - Ditko (3.45.0):
+  - Ditko (3.47.0):
     - KSOFontAwesomeExtensions
     - Loki
     - Stanley
-  - KSOFontAwesomeExtensions (1.4.0):
+  - KSOFontAwesomeExtensions (1.5.0):
     - Stanley
   - Loki (1.4.1)
-  - Shield (1.1.0):
-    - Shield/Accessibility (= 1.1.0)
-    - Shield/Accounts (= 1.1.0)
-    - Shield/Bluetooth (= 1.1.0)
-    - Shield/Camera (= 1.1.0)
-    - Shield/Contacts (= 1.1.0)
-    - Shield/Core (= 1.1.0)
-    - Shield/Event (= 1.1.0)
-    - Shield/Health (= 1.1.0)
-    - Shield/Home (= 1.1.0)
-    - Shield/Local (= 1.1.0)
-    - Shield/Location (= 1.1.0)
-    - Shield/MediaLibrary (= 1.1.0)
-    - Shield/Microphone (= 1.1.0)
-    - Shield/Motion (= 1.1.0)
-    - Shield/Notification (= 1.1.0)
-    - Shield/Photos (= 1.1.0)
-    - Shield/Security (= 1.1.0)
-    - Shield/Siri (= 1.1.0)
-    - Shield/Speech (= 1.1.0)
-    - Shield/VideoSubscriberAccount (= 1.1.0)
-  - Shield/Accounts (1.1.0):
-    - Shield/Core
-    - Stanley
-  - Shield/Bluetooth (1.1.0):
-    - Shield/Core
-    - Stanley
-  - Shield/Camera (1.1.0):
-    - Shield/Core
-    - Stanley
-  - Shield/Contacts (1.1.0):
-    - Shield/Core
-    - Stanley
-  - Shield/Core (1.1.0)
-  - Shield/Event (1.1.0):
-    - Shield/Core
-    - Stanley
-  - Shield/Health (1.1.0):
-    - Shield/Core
-    - Stanley
-  - Shield/Home (1.1.0):
-    - Shield/Core
-    - Stanley
-  - Shield/Local (1.1.0):
-    - Shield/Core
-    - Stanley
-  - Shield/Location (1.1.0):
-    - Shield/Core
-    - Stanley
-  - Shield/MediaLibrary (1.1.0):
-    - Shield/Core
-    - Stanley
-  - Shield/Microphone (1.1.0):
-    - Shield/Core
-    - Stanley
-  - Shield/Motion (1.1.0):
-    - Shield/Core
-    - Stanley
-  - Shield/Notification (1.1.0):
-    - Shield/Core
-    - Stanley
-  - Shield/Photos (1.1.0):
-    - Shield/Core
-    - Stanley
-  - Shield/Siri (1.1.0):
-    - Shield/Core
-    - Stanley
-  - Shield/Speech (1.1.0):
-    - Shield/Core
-    - Stanley
-  - Shield/VideoSubscriberAccount (1.1.0):
-    - Shield/Core
-    - Stanley
   - Stanley (2.16.0)
 
 DEPENDENCIES:
   - Ditko
-  - Shield
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Ditko
     - KSOFontAwesomeExtensions
     - Loki
-    - Shield
     - Stanley
 
 SPEC CHECKSUMS:
-  Ditko: 06d1bae66c4ca2a0031a9cf0abfed500621c62d3
-  KSOFontAwesomeExtensions: 9c950dd5a460377694dfed880138d9dcafa61b25
+  Ditko: 713b13003210285683a9816a734a6f7e16efe409
+  KSOFontAwesomeExtensions: 90776ade2c21a3fd447f0ec57aad5d6fbe2dc800
   Loki: f96654ad4017dc9a012ce08ea12776b9ba66d8f4
-  Shield: d165bf8546b96da93aae162c81c7e4ebbf4e8425
   Stanley: dda2c71d6a2c1bd073ac1adc650c8a32ee83caff
 
-PODFILE CHECKSUM: a9e22f9521e9d9315842ff32df75207a6dcc5be8
+PODFILE CHECKSUM: e3e2f55841dc58f4aa3e64280f8a531b6d44bfcf
 
 COCOAPODS: 1.5.3

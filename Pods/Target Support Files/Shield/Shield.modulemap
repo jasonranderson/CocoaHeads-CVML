@@ -1,6 +1,0 @@
-framework module Shield {
-  umbrella header "Shield-umbrella.h"
-
-  export *
-  module * { export * }
-}

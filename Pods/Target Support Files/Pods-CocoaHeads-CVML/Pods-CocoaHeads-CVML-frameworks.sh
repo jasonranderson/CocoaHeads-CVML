@@ -146,14 +146,12 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Ditko/Ditko.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/KSOFontAwesomeExtensions/KSOFontAwesomeExtensions.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Loki/Loki.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Shield/Shield.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Stanley/Stanley.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Ditko/Ditko.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/KSOFontAwesomeExtensions/KSOFontAwesomeExtensions.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Loki/Loki.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Shield/Shield.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Stanley/Stanley.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then

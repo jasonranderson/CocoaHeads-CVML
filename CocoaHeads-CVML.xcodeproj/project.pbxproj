@@ -202,7 +202,6 @@
 				"${BUILT_PRODUCTS_DIR}/Ditko/Ditko.framework",
 				"${BUILT_PRODUCTS_DIR}/KSOFontAwesomeExtensions/KSOFontAwesomeExtensions.framework",
 				"${BUILT_PRODUCTS_DIR}/Loki/Loki.framework",
-				"${BUILT_PRODUCTS_DIR}/Shield/Shield.framework",
 				"${BUILT_PRODUCTS_DIR}/Stanley/Stanley.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -210,7 +209,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Ditko.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KSOFontAwesomeExtensions.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Loki.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Shield.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stanley.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,10 +393,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 74KPPW2K35;
 				INFOPLIST_FILE = "CocoaHeads-CVML/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kosoku.CocoaHeads-CVML";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -414,10 +409,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 74KPPW2K35;
 				INFOPLIST_FILE = "CocoaHeads-CVML/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kosoku.CocoaHeads-CVML";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

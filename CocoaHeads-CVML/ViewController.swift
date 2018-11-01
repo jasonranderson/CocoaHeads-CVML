@@ -9,7 +9,6 @@
 import UIKit
 import AVFoundation
 import Stanley
-import Shield
 
 class ViewController: UIViewController {
     //MARK:- IBOutlets

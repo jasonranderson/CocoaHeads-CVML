@@ -1,8 +1,8 @@
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Ditko" "${PODS_CONFIGURATION_BUILD_DIR}/KSOFontAwesomeExtensions" "${PODS_CONFIGURATION_BUILD_DIR}/Loki" "${PODS_CONFIGURATION_BUILD_DIR}/Shield" "${PODS_CONFIGURATION_BUILD_DIR}/Stanley"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Ditko" "${PODS_CONFIGURATION_BUILD_DIR}/KSOFontAwesomeExtensions" "${PODS_CONFIGURATION_BUILD_DIR}/Loki" "${PODS_CONFIGURATION_BUILD_DIR}/Stanley"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "${PODS_CONFIGURATION_BUILD_DIR}/Ditko/Ditko.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/KSOFontAwesomeExtensions/KSOFontAwesomeExtensions.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/Loki/Loki.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/Shield/Shield.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/Stanley/Stanley.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "Ditko" -framework "KSOFontAwesomeExtensions" -framework "Loki" -framework "Shield" -framework "Stanley"
+OTHER_CFLAGS = $(inherited) -iquote "${PODS_CONFIGURATION_BUILD_DIR}/Ditko/Ditko.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/KSOFontAwesomeExtensions/KSOFontAwesomeExtensions.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/Loki/Loki.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/Stanley/Stanley.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -framework "Ditko" -framework "KSOFontAwesomeExtensions" -framework "Loki" -framework "Stanley"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
