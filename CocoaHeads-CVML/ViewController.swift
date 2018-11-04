@@ -26,9 +26,11 @@ class ViewController: UIViewController {
     private let session = AVCaptureSession()
     private var isSessionRunning = false
     private var setupResult: SessionSetupResult = .success
-    private var videoOutput: AVCaptureVideoDataOutput?
+    private var videoOutput = AVCaptureVideoDataOutput()
     private var videoDeviceInput: AVCaptureDeviceInput!
+    private let viewModel: LiveCameraViewModel = LiveCameraViewModel()
 
+    //MARK:- Lifecycle overrides
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -104,9 +106,111 @@ class ViewController: UIViewController {
 
 }
 
+//MARK:- Private methods
 private extension ViewController {
     func configureSession() {
+        if setupResult != .success {
+            return
+        }
         
+        session.beginConfiguration()
+        
+        session.sessionPreset = .high
+        
+        do {
+            var defaultVideoDevice: AVCaptureDevice?
+            
+            if let dualCameraDevice = AVCaptureDevice.default(.builtInDualCamera, for: .video, position: .back) {
+                defaultVideoDevice = dualCameraDevice
+            } else if let backCameraDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back) {
+                defaultVideoDevice = backCameraDevice
+            }
+            
+            let videoDeviceInput = try AVCaptureDeviceInput(device: defaultVideoDevice!)
+            
+            if session.canAddInput(videoDeviceInput) {
+                session.addInput(videoDeviceInput)
+                self.videoDeviceInput = videoDeviceInput
+                
+                KSTDispatchMainAsync {
+                    let statusBarOrientation = UIApplication.shared.statusBarOrientation
+                    var initialVideoOrientation: AVCaptureVideoOrientation = .portrait
+                    if statusBarOrientation != .unknown {
+                        if let videoOrientation = AVCaptureVideoOrientation(rawValue: statusBarOrientation.rawValue) {
+                            initialVideoOrientation = videoOrientation
+                        }
+                    }
+                    
+                    self.previewView.videoPreviewLayer.connection?.videoOrientation = initialVideoOrientation
+                }
+            } else {
+                print("Could not add video device input to the session")
+                setupResult = .configurationFailed
+                session.commitConfiguration()
+            }
+        } catch {
+            print("Could not create video device input: \(error)")
+            setupResult = .configurationFailed
+            session.commitConfiguration()
+            return
+        }
+        
+        if session.canAddOutput(videoOutput) {
+            session.addOutput(videoOutput)
+            
+            videoOutput.alwaysDiscardsLateVideoFrames = true
+            videoOutput.setSampleBufferDelegate(self, queue: videoOutputQueue)
+            if let videoConnection = videoOutput.connection(with: .video) {
+                videoConnection.isEnabled = true
+                
+                if videoConnection.isCameraIntrinsicMatrixDeliverySupported {
+                    videoConnection.isCameraIntrinsicMatrixDeliveryEnabled = true
+                }
+            }
+            
+        } else {
+            print("Could not add photo output to the session")
+            setupResult = .configurationFailed
+            session.commitConfiguration()
+            return
+        }
+        
+        session.commitConfiguration()
     }
     
+    func appliedOrientationForVideoPreviewOrientation(_ orientation: AVCaptureVideoOrientation) -> CGImagePropertyOrientation {
+        switch orientation {
+        case .portrait: return CGImagePropertyOrientation.right;
+        case .landscapeLeft: return CGImagePropertyOrientation.down;
+        case .portraitUpsideDown: return CGImagePropertyOrientation.left;
+        case .landscapeRight: return CGImagePropertyOrientation.up;
+        }
+    }
+    
+}
+
+//MARK:- AVCaptureVideoDataOutputSampleBufferDelegate methods
+extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
+    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
+            return
+        }
+        
+        let image = CIImage(cvPixelBuffer: pixelBuffer)
+        KSTDispatchMainAsync {
+            if let orientation = self.previewView.videoPreviewLayer.connection?.videoOrientation {
+                let appliedOrientation = self.appliedOrientationForVideoPreviewOrientation(orientation)
+                self.sessionQueue.async {
+                    let rotatedImage = image.oriented(appliedOrientation)
+                    self.viewModel.performDetectionOnImage(rotatedImage, withOrientation: appliedOrientation, withCompletion: { (confidence, label) in
+                        if let label = label {
+                            if (confidence > 98.0) {
+                                self.outputLabel.text = label
+                            }
+                        }
+                    })
+                }
+            }
+        }
+    }
 }
