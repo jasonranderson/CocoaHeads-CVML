@@ -29,6 +29,7 @@ class ViewController: UIViewController {
     private var videoOutput = AVCaptureVideoDataOutput()
     private var videoDeviceInput: AVCaptureDeviceInput!
     private let viewModel: LiveCameraViewModel = LiveCameraViewModel()
+    private var isProcessingFlag = false
 
     //MARK:- Lifecycle overrides
     override func viewDidLoad() {
@@ -192,9 +193,14 @@ private extension ViewController {
 //MARK:- AVCaptureVideoDataOutputSampleBufferDelegate methods
 extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
+        
+        //Check that processing and image buffer are available
+        guard self.isProcessingFlag == false, let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
             return
         }
+        
+        //Control for race issues with flag
+        self.isProcessingFlag = true
         
         let image = CIImage(cvPixelBuffer: pixelBuffer)
         KSTDispatchMainAsync {
@@ -208,8 +214,13 @@ extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
                                 self.outputLabel.text = label
                             }
                         }
+                    //Reset flag
+                    self.isProcessingFlag = false
                     })
                 }
+            } else {
+                //Reset flag
+                self.isProcessingFlag = false
             }
         }
     }
